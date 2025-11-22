@@ -1,0 +1,151 @@
+@import url("https://fonts.googleapis.com/css2?family=Playfair:ital,opsz,wght@0,5..1200,300..900;1,5..1200,300..900&display=swap");
+@import url("https://fonts.googleapis.com/css2?family=Roboto:ital,wght@0,100..900;1,100..900&display=swap");
+
+:root {
+  --main-font: "Playfair", serif;
+  --secondary-font: "Roboto", sans-serif;
+  --main-color: #37132d;
+}
+
+* {
+  padding: 0;
+  margin: 0;
+  box-sizing: border-box;
+}
+
+@media (max-width: 700px) {
+  .nav {
+    display: none;
+  }
+
+  /* Nav Bar */
+  .navbar {
+    background: rgb(132, 132, 132);
+    display: flex;
+    width: 100%;
+    height: 97px;
+    position: fixed;
+    top: 0;
+    left: 0;
+    padding: 30px;
+    align-items: center;
+    z-index: 9;
+  }
+
+  .toggle-btn {
+    position: relative;
+    width: 50px;
+    height: 50px;
+    cursor: pointer;
+  }
+
+  .toggle-btn span {
+    position: absolute;
+    top: 25%;
+    background: red;
+    left: 0;
+    transform: translateY(-50%);
+    width: 100%;
+    height: 3px;
+    transition: 1s;
+  }
+  .toggle-btn span:nth-child(2) {
+    top: 50%;
+    width: 70%;
+  }
+  .toggle-btn span:nth-child(3) {
+    top: 75%;
+    width: 40%;
+  }
+
+  .toggle-btn.active span:nth-child(2) {
+    display: none;
+  }
+
+  .toggle-btn.active span:nth-child(1) {
+    top: 50%;
+    transform: rotate(45deg);
+  }
+  .toggle-btn.active span:nth-child(3) {
+    top: 50%;
+    transform: rotate(-45deg);
+    width: 100%;
+  }
+  /* Nav Bar End*/
+
+  /*Header  */
+  .page-container {
+    display: flex;
+    align-items: end;
+    position: relative;
+    width: 100%;
+    height: 100%;
+    transition: 1s;
+    left: 0;
+    padding: 30px;
+    z-index: 10;
+  }
+
+  .imesumbua {
+    position: absolute;
+    right: 10px;
+    height: 300px;
+    top: 0;
+    width: 40%;
+    text-align: end;
+  }
+
+  .page {
+    padding: 20px;
+    pointer-events: none;
+    opacity: 0;
+  }
+
+  .page.active {
+    opacity: 1;
+  }
+
+  .page .title {
+    background-color: antiquewhite;
+    border-radius: 10px;
+    padding: 10px;
+    cursor: pointer;
+  }
+}
+/*Header End*/
+
+/* Header Barber Start */
+@media (min-width: 701px) {
+  .navbar {
+    display: none;
+  }
+  .page-container {
+    display: none;
+  }
+  .nav {
+    display: flex;
+    justify-content: space-around;
+    align-items: center;
+    padding: 30px;
+    background: rgb(132, 132, 132);
+  }
+
+  ul li {
+    list-style: none;
+    display: inline;
+  }
+
+  ul li a {
+    text-decoration: none;
+    margin: 10px;
+    color: #000;
+    font-family: var(--secondary-font);
+  }
+  /* Header Barber End */
+
+  /*Section*/
+  .content_container {
+    display: none;
+  }
+}
+/*Section End*/
